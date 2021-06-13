@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
     public bool autoPlay = false;
 
     public new bool camera;
-    public Editor editorScript;
+    // public Editor editorScript;
 
 
     public CameraList myCameraList = new CameraList();
