@@ -1,0 +1,26 @@
+{
+	"levelcreator": "Starpelly",
+	"songcreator": "Yo mama",
+	"version" : 1.0,
+	"bpm" : 138.7,
+	"end" : 900,
+	"entities" : [0.25, 2, 4, 6, 8, 10],
+	"highballs": [12],
+	"riceballs" : [],
+	"highriceballs" : [],
+	"alien" : [],
+	"camera" : [
+		{
+			"beat": 1,
+			"duration": 11,
+			"size": 4.85
+		},
+		{
+			"beat": 12,
+			"duration": 2,
+			"size": 15
+		}
+	],
+	"costume" : [
+	]
+}

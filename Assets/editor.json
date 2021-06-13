@@ -1,0 +1,16 @@
+{
+	"levelcreator": "Your Name Here",
+	"songcreator": "Name Here",
+	"version" : 1.0,
+	"bpm" : 120,
+	"end" : 240,
+	"entities" : [],
+	"highballs": [],
+	"riceballs" : [],
+	"highriceballs" : [],
+	"alien" : [],
+	"camera" : [
+	],
+	"costume" : [
+	]
+}

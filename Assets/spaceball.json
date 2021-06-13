@@ -1,0 +1,163 @@
+{
+	"levelcreator": "Nintendo",
+	"songcreator": "Tsunku♂",
+	"version" : 1.0,
+	"bpm" : 105,
+	"end" : 141,
+	"entities" : [4, 6, 8, 10, 14, 16, 18, 20, 22, 24, 26, 32, 34, 36, 38, 40, 42, 48, 50, 56, 58, 64, 66, 68, 70, 72, 74, 80, 82, 84, 86, 88, 90, 96, 98, 100, 102, 104, 106, 112, 114, 120, 122],
+	"highballs": [28, 44, 52, 60, 76, 92, 108, 116, 124],
+	"riceballs" : [],
+	"highriceballs" : [132],
+	"alien" : [73.25, 74.25, 75.25, 85.25, 86.25, 87.25, 88.25],
+	"camera" : [
+		{
+			"beat": 1,
+			"duration": 4,
+			"size": 8.4
+		},
+		{
+			"beat": 8,
+			"duration": 4,
+			"size": 18
+		},
+		{
+			"beat": 12,
+			"duration": 0.25,
+			"size": 8.4
+		},
+		{
+			"beat": 21,
+			"duration": 4,
+			"size": 25
+		},
+		{
+			"beat": 32,
+			"duration": 4,
+			"size": 8.4
+		},
+		{
+			"beat": 44,
+			"duration": 1,
+			"size": 25
+		},
+		{
+			"beat": 48,
+			"duration": 4,
+			"size": 8.4
+		},
+		{
+			"beat": 52,
+			"duration": 2,
+			"size": 25
+		},
+		{
+			"beat": 56,
+			"duration": 2,
+			"size": 8.4
+		},
+		{
+			"beat": 60,
+			"duration": 2,
+			"size": 25
+		},
+		{
+			"beat": 64,
+			"duration": 4,
+			"size": 8.4
+		},
+		{
+			"beat": 72,
+			"duration": 1,
+			"size": 7
+		},
+		{
+			"beat": 74,
+			"duration": 1,
+			"size": 4.8
+		},
+		{
+			"beat": 76,
+			"duration": 2,
+			"size": 18
+		},
+		{
+			"beat": 78,
+			"duration": 2,
+			"size": 8.4
+		},
+		{
+			"beat": 82,
+			"duration": 1,
+			"size": 7
+		},
+		{
+			"beat": 84,
+			"duration": 1,
+			"size": 4.8
+		},
+		{
+			"beat": 86,
+			"duration": 1,
+			"size": 2.4
+		},
+		{
+			"beat": 90,
+			"duration": 1,
+			"size": 8.4
+		},
+		{
+			"beat": 92,
+			"duration": 2,
+			"size": 210
+		},
+		{
+			"beat": 112,
+			"duration": 8,
+			"size": 8.4
+		},
+		{
+			"beat": 124,
+			"duration": 2,
+			"size": 40
+		},
+		{
+			"beat": 128,
+			"duration": 0.5,
+			"size": 25
+		},
+		{
+			"beat": 129,
+			"duration": 0.5,
+			"size": 18
+		},
+		{
+			"beat": 130,
+			"duration": 0.5,
+			"size": 10
+		},
+		{
+			"beat": 131,
+			"duration": 0.5,
+			"size": 8.4
+		},
+		{
+			"beat": 132,
+			"duration": 2,
+			"size": 210
+		}
+	],
+	"costume" : [
+		{
+			"beat": 1,
+			"type": 1
+		},
+		{
+			"beat": 89,
+			"type": 2
+		},
+		{
+			"beat": 96,
+			"type": 3
+		}
+	]
+}

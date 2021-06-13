@@ -1,0 +1,157 @@
+{
+	"version" : 1.0,
+	"bpm" : 165.3,
+	"end" : 141,
+	"entities" : [5, 7, 9, 11, 15, 17, 19, 21, 23, 25, 27, 33, 35, 37, 39, 41, 43, 49, 51, 57, 59, 65, 67, 69, 71, 73, 75, 81, 83, 85, 87, 89, 91, 97, 99, 101, 103, 105, 107, 113, 115, 121, 123],
+	"highballs": [29, 45, 53, 61, 77, 93, 109, 117, 125],
+	"riceballs" : [],
+	"highriceballs" : [133],
+	"alien" : [73.25, 74.5, 75.75, 85.25, 86.5, 87.75, 89],
+	"camera" : [
+		{
+			"beat": 1,
+			"duration": 4,
+			"size": 4.85
+		},
+		{
+			"beat": 9,
+			"duration": 4,
+			"size": 10
+		},
+		{
+			"beat": 13,
+			"duration": 0.25,
+			"size": 4.85
+		},
+		{
+			"beat": 22,
+			"duration": 4,
+			"size": 15
+		},
+		{
+			"beat": 33,
+			"duration": 4,
+			"size": 4.85
+		},
+		{
+			"beat": 45,
+			"duration": 1,
+			"size": 15
+		},
+		{
+			"beat": 49,
+			"duration": 4,
+			"size": 4.85
+		},
+		{
+			"beat": 53,
+			"duration": 2,
+			"size": 15
+		},
+		{
+			"beat": 57,
+			"duration": 2,
+			"size": 4.85
+		},
+		{
+			"beat": 61,
+			"duration": 2,
+			"size": 15
+		},
+		{
+			"beat": 65,
+			"duration": 4,
+			"size": 4.85
+		},
+		{
+			"beat": 73,
+			"duration": 1,
+			"size": 3.85
+		},
+		{
+			"beat": 75,
+			"duration": 1,
+			"size": 2.85
+		},
+		{
+			"beat": 77,
+			"duration": 2,
+			"size": 8
+		},
+		{
+			"beat": 79,
+			"duration": 2,
+			"size": 4.85
+		},
+		{
+			"beat": 83,
+			"duration": 1,
+			"size": 3.85
+		},
+		{
+			"beat": 85,
+			"duration": 1,
+			"size": 2.85
+		},
+		{
+			"beat": 87,
+			"duration": 1,
+			"size": 1.35
+		},
+		{
+			"beat": 91,
+			"duration": 1,
+			"size": 4.85
+		},
+		{
+			"beat": 93,
+			"duration": 2,
+			"size": 110
+		},
+		{
+			"beat": 113,
+			"duration": 8,
+			"size": 4.85
+		},
+		{
+			"beat": 125,
+			"duration": 2,
+			"size": 17
+		},
+		{
+			"beat": 129,
+			"duration": 0.5,
+			"size": 13
+		},
+		{
+			"beat": 130,
+			"duration": 0.5,
+			"size": 8
+		},
+		{
+			"beat": 131,
+			"duration": 0.5,
+			"size": 6.5
+		},
+		{
+			"beat": 132,
+			"duration": 0.5,
+			"size": 4.85
+		},
+		{
+			"beat": 133,
+			"duration": 2,
+			"size": 110
+		}
+	],
+	"costume" : [
+		{
+			"beat": 90,
+			"type": 2
+		},
+		{
+			"beat": 97,
+			"type": 3
+		}
+	]
+}
