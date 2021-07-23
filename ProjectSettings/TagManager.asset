@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Miss
   - Ball
+  - BallHolder
   layers:
   - Default
   - TransparentFX

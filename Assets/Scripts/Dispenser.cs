@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Dispenser : MonoBehaviour
@@ -24,6 +25,10 @@ public class Dispenser : MonoBehaviour
         Ball ballScript = ball.GetComponent<Ball>();
         ballScript.ballSprite.sprite = sprite;
         ballScript.animSpeed = secPerBeat;
+
+        // StartCoroutine(autoPlay(1));
+
+        // Player.instance.hitTimes.Add(Conductor.instance.songPosBeat + 1);
     }
 
     public void ShootHigh(float secPerBeat, Sprite sprite)
@@ -33,5 +38,16 @@ public class Dispenser : MonoBehaviour
         Ball ballScript = ball.GetComponent<Ball>();
         ballScript.ballSprite.sprite = sprite;
         ballScript.animSpeed = secPerBeat;
+
+        // StartCoroutine(autoPlay(2));
+
+        // Player.instance.hitTimes.Add(Conductor.instance.songPosBeat + 2);
+    }
+
+    IEnumerator autoPlay(int multiply)
+    {
+        yield return new WaitForSeconds(Conductor.instance.secPerRealBeat * multiply);
+        Player.instance.Swing();
+        Debug.Log(Conductor.instance.beatPosition);
     }
 }

@@ -24,13 +24,13 @@ public class GameManager : MonoBehaviour
 
     public string levelcreator;
     public string songcreator;
-    public float[] entities;
-    float[] riceballs;
-    float[] highriceballs;
-    float[] highballs;
-    float[] alien;
+    public List<float> entities;
+    public List<float> riceballs;
+    public List<float> highriceballs;
+    public List<float> highballs;
+    public List<float> alien;
     float end;
-    GameData loadedGameData;
+    public GameData loadedGameData;
 
     [Header("Sprites")]
     public Sprite ball;
@@ -40,13 +40,19 @@ public class GameManager : MonoBehaviour
     public bool autoPlay = false;
 
     public new bool camera;
-    // public Editor editorScript;
-
 
     public CameraList myCameraList = new CameraList();
     public CostumeList myCostumeList = new CostumeList();
 
     public bool mainGame = false;
+
+    public bool changingCameraZoom;
+    public float lerpAmount = 0f;
+    public float duration = 0f;
+    public int zoomChanges = 0;
+    float originalZoom;
+    public float newCamZoom;
+    public float lastPerc;
 
     private void Start()
     {
@@ -63,10 +69,6 @@ public class GameManager : MonoBehaviour
 
         conductor.bpm = loadedGameData.bpm;
 
-        /*for (int i = 0; i < loadedGameData.entities.Length; i++)
-        {
-            Debug.Log(loadedGameData.entities[i]);
-        }*/
         levelcreator = loadedGameData.levelcreator;
         songcreator = loadedGameData.songcreator;
         entities = loadedGameData.entities;
@@ -97,11 +99,6 @@ public class GameManager : MonoBehaviour
         }
 
         conductor.bpm = loadedGameData.bpm;
-
-        /*for (int i = 0; i < loadedGameData.entities.Length; i++)
-        {
-            Debug.Log(loadedGameData.entities[i]);
-        }*/
         levelcreator = loadedGameData.levelcreator;
         songcreator = loadedGameData.songcreator;
         entities = loadedGameData.entities;
@@ -116,14 +113,13 @@ public class GameManager : MonoBehaviour
 
     public void WriteData(string path, string contents)
     {
-
         File.WriteAllText(path, contents);
         loadedGameData = JsonUtility.FromJson<GameData>(json);
 
         myCameraList = JsonUtility.FromJson<CameraList>(json);
         myCostumeList = JsonUtility.FromJson<CostumeList>(json);
 
-        loadedGameData.entities = new float[133];
+        // loadedGameData.entities = new float[133];
         loadedGameData.entities[0] = 1f;
 
         json = JsonUtility.ToJson(path);
@@ -131,8 +127,11 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if (Time.timeScale > 0) if (Input.GetKeyDown(KeyCode.S)) Shoot(ball);
+        if (Time.timeScale > 0) if (Input.GetKeyDown(KeyCode.D)) HighShoot(ball);
         if (conductor.onBeat)
         {
+            // if (conductor.songPosBeat == 0.25) Debug.Log("suck my dick");
 
             if (entities.Contains(conductor.songPosBeat))
                 Shoot(ball);
@@ -153,7 +152,12 @@ public class GameManager : MonoBehaviour
                 {
                     if (myCameraList.camera[i].beat == conductor.songPosBeat)
                     {
-                        StartCoroutine(ResizeCamera(new Vector3(-0.01f, -0.01f, -myCameraList.camera[i].size), cam.transform.position, conductor.secPerBeat * myCameraList.camera[i].duration * 4f));
+                        //StartCoroutine(ResizeCamera(new Vector3(-0.01f, -0.01f, -myCameraList.camera[i].size), cam.transform.position, conductor.secPerBeat * myCameraList.camera[i].duration * 4f));
+                        zoomChanges = 0;
+                        changingCameraZoom = true;
+                        newCamZoom = -myCameraList.camera[i].size;
+                        lerpAmount = 0;
+                        duration = conductor.secPerBeat * myCameraList.camera[i].duration * 4f;
                     }
                 }
             }
@@ -183,9 +187,28 @@ public class GameManager : MonoBehaviour
 
             if (conductor.songPosBeat == end)
             {
-                Application.Quit();
-                Debug.Log("Quit");
+                // Debug.Log("Quit");
             }
+        }
+
+        if (lerpAmount >= duration)
+        {
+            changingCameraZoom = false;
+            zoomChanges = 0;
+        }
+
+        if (changingCameraZoom)
+        {
+            zoomChanges++;
+            if (zoomChanges == 1)
+            {
+                originalZoom = cam.transform.position.z;
+            }
+            lerpAmount += Time.deltaTime;
+            float perc = lerpAmount / duration;
+            lastPerc = duration - lerpAmount; // je ne peux pas croire que j’ai passé 20 minutes à faire un simple problème de mathématiques
+
+            cam.transform.position = Vector3.Lerp(new Vector3(cam.transform.position.x, cam.transform.position.y, originalZoom), new Vector3(cam.transform.position.x, cam.transform.position.y, newCamZoom), perc);
         }
     }
 
@@ -202,17 +225,17 @@ public class GameManager : MonoBehaviour
     }
 
     [System.Serializable]
-    private class GameData
+    public class GameData
     {
         public string levelcreator;
         public string songcreator;
         public float bpm;
         public float end;
-        public float[] entities;
-        public float[] riceballs;
-        public float[] highriceballs;
-        public float[] highballs;
-        public float[] alien;
+        public List<float> entities;
+        public List<float> riceballs;
+        public List<float> highriceballs;
+        public List<float> highballs;
+        public List<float> alien;
     }
 
     [System.Serializable]
@@ -252,6 +275,21 @@ public class GameManager : MonoBehaviour
 
 
     ///----------------------------------------------------------------------------------------------
+    ///
+
+    public void StopCamera()
+    {
+        zoomChanges = 0;
+        changingCameraZoom = false;
+    }
+
+    public void ResumeCamera()
+    {
+        zoomChanges = 0;
+        changingCameraZoom = true;
+        lerpAmount = 0;
+        duration = lastPerc;
+    }
 
     IEnumerator ResizeCamera(Vector3 endValue, Vector3 valueToLerp, float lerpDuration = 1.4f)
     {

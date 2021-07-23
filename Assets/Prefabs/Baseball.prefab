@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1600337920993031337}
   m_Layer: 6
   m_Name: ObjectHolder
-  m_TagString: Ball
+  m_TagString: BallHolder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,6 +100,7 @@ MonoBehaviour:
   miss: {fileID: 8300000, guid: 3b09209ba7dc02e41be2b6491cb73794, type: 3}
   hit: {fileID: 8300000, guid: 3073f25c7677c7a4cb91230b8dad8fd7, type: 3}
   ballScript: {fileID: 1600337921749533439}
+  ballSpr: {fileID: 1600337921739231658}
 --- !u!1 &1600337921283977056
 GameObject:
   m_ObjectHideFlags: 0

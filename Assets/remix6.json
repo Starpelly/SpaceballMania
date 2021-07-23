@@ -1,10 +1,10 @@
 {
 	"levelcreator": "Starpelly",
-	"songcreator": "Yo mama",
+	"songcreator": "Joe Biden",
 	"version" : 1.0,
 	"bpm" : 138.7,
 	"end" : 900,
-	"entities" : [0.25, 2, 4, 6, 8, 10],
+	"entities" : [0, 2, 4, 6, 8, 10],
 	"highballs": [12],
 	"riceballs" : [],
 	"highriceballs" : [],

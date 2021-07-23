@@ -20,10 +20,9 @@ public class Ball : MonoBehaviour
     {
         // StartCoroutine(ThrowBall(this.transform.position, new Vector3(1.571f, -3.641f, 0), animSpeed / 2));
         Destroy(this.gameObject, 5f);
-        Quaternion newRotation = Quaternion.Euler(0, 0, Random.Range(0f, 360f));
-        sprite.rotation = newRotation;
         anim.speed = animSpeed;
     }
+
     public void Delete()
     {
         Instantiate(dust);

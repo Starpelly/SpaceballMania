@@ -18,38 +18,52 @@ public class BallAnim : MonoBehaviour
 
     public Ball ballScript;
 
+    public GameObject ballSpr;
+
+    void Start()
+    {
+        Quaternion newRotation = Quaternion.Euler(0, 0, Random.Range(0f, 360f));
+        ballSpr.transform.localRotation = newRotation;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Ball")
+        if (collision.tag == "BallHolder")
         {
             return;
         }
-        if (collision.tag == "Miss")
-        {
-            if (hasHit == true)
-                return;
 
-            hasMissed = true;
-            //StartCoroutine(HitBall(this.transform.position, new Vector3(-90, Random.Range(60, -60), 0), 1.2f));
-            audioSrc.PlayOneShot(miss);
-            collider.enabled = false;
-            rb.bodyType = RigidbodyType2D.Dynamic;
-            rb.AddForce(this.transform.up * 1100);
-            rb.gravityScale = 9;
-        }
-        if (collision.tag == "Player")
+        if (Player.instance.canHitAgain == true)
         {
-            if (hasMissed == true)
-                return;
-            hasHit = true;
-            hasMissed = false;
-            audioSrc.PlayOneShot(hit);
-            collider.enabled = false;
-            StartCoroutine(HitBall(this.transform.position, new Vector3(Random.Range(5, 25), 0, -600), 5f));
-            // StartCoroutine(ResizeBall(this.transform.localScale, new Vector3(20, 20, 0), 5f));
-            // StartCoroutine(RotateBall(this.transform.rotation, new Quaternion(0, 0, 670, 0)));
+            if (collision.tag == "Miss")
+            {
+                if (hasHit == true)
+                    return;
+
+                hasMissed = true;
+                //StartCoroutine(HitBall(this.transform.position, new Vector3(-90, Random.Range(60, -60), 0), 1.2f));
+                audioSrc.PlayOneShot(miss);
+                collider.enabled = false;
+                rb.bodyType = RigidbodyType2D.Dynamic;
+                rb.AddForce(this.transform.up * 1100);
+                rb.gravityScale = 9;
+            }
+            if (collision.tag == "Player")
+            {
+                if (hasMissed == true)
+                    return;
+
+                Player.instance.canHitAgain = false;
+                hasHit = true;
+                hasMissed = false;
+                audioSrc.PlayOneShot(hit);
+                collider.enabled = false;
+                StartCoroutine(HitBall(this.transform.position, new Vector3(Random.Range(5, 25), 0, -600), 5f));
+                // StartCoroutine(ResizeBall(this.transform.localScale, new Vector3(20, 20, 0), 5f));
+                // StartCoroutine(RotateBall(this.transform.rotation, new Quaternion(0, 0, 670, 0)));
+            }
+            anim.enabled = false;
         }
-        anim.enabled = false;
     }
 
     IEnumerator HitBall(Vector3 valueToLerp, Vector3 endValue, float lerpDuration = 1.4f)
