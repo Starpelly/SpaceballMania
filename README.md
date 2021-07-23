@@ -7,6 +7,8 @@ Full recreation of Spaceball from Rhythm Heaven Megamix
 ## NOTE: This project is still in development.
 
 [![GitHub license](https://img.shields.io/github/license/starpelly/spaceballmania.svg)](https://github.com/Starpelly/SpaceballMania/blob/main/LICENSE)
+[![itch.io](https://img.shields.io/badge/itch.io-starpelly.itch.io%2Fspaceball--mania-yellow)](https://starpelly.itch.io/spaceball-mania)
+[![youtube.com/starpelly](https://img.shields.io/badge/youtube-youtube.com%2Fstarpelly-red)](https://youtube.com/starpelly)
 
 ## Development status
 This project is still in development. Development progress:
