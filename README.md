@@ -2,6 +2,7 @@
 Full recreation of Spaceball from Rhythm Heaven Megamix
 
 ![Spaceball Mania Thumbnail](https://i.imgur.com/s6r5ZpE.png)
+(Video or screenshots shown are not final and subject to change.)
 
 ## NOTE: This project is still in development.
 
