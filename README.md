@@ -1,4 +1,7 @@
 # Spaceball Mania (WIP)
+
+# THIS IS NO LONGER BEING WORKED ON
+
 Full recreation of Spaceball from Rhythm Heaven Megamix
 
 ![Spaceball Mania Thumbnail](https://i.imgur.com/s6r5ZpE.png)
